@@ -1,0 +1,215 @@
+:root {
+  --bg-canvas: #FFFFFF;
+  --bg-hero: #4A9EE6;
+  --bg-hero-light: #62B0F0;
+  --text-primary: #1E2A35;
+  --text-secondary: #6C7A89;
+  --text-on-hero: #FFFFFF;
+  --brand: #2D8BE8;
+  --accent: #1F7AD1;
+  --cta-primary-bg: #FFFFFF;
+  --cta-primary-text: #2D8BE8;
+  --cta-secondary-bg: #2D8BE8;
+  --cta-secondary-text: #FFFFFF;
+  --nav-link: #4A9EE6;
+  --nav-link-hover: #1F7AD1;
+  --icon-circle-1: #FAD46B;
+  --icon-circle-2: #66C2D1;
+  --icon-circle-3: #7EC6FF;
+  --icon-circle-4: #F46B6B;
+  --divider: #E8EEF4;
+  --card-shadow: rgba(16, 42, 67, 0.06);
+
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 var(--space-24);
+}
+
+/* Top fixed marketing header */
+.marketing-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 64px;
+  background: var(--bg-canvas);
+  border-bottom: 1px solid var(--divider);
+}
+.marketing-header .topbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hamburger {
+  width: 24px;
+  height: 16px;
+  display: grid;
+  gap: 4px;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+}
+.nav {
+  display: flex;
+  gap: 24px;
+}
+.nav a {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--nav-link);
+  text-decoration: none;
+}
+.nav a:hover,
+.nav a:focus {
+  color: var(--nav-link-hover);
+  text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+  background: var(--bg-hero);
+  color: var(--text-on-hero);
+  padding: 64px 0 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero h1 {
+  font-size: 52px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+  letter-spacing: 0.2px;
+}
+.hero p.lead {
+  font-size: 17px;
+  opacity: 0.9;
+  margin: 0 0 24px;
+}
+.cta-group {
+  display: inline-flex;
+  gap: 16px;
+}
+.btn-hero {
+  height: 44px;
+  padding: 0 22px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  transition: transform 160ms ease, box-shadow 160ms ease, color 160ms ease, background 160ms ease;
+}
+.btn-hero:focus-visible {
+  outline: 2px solid rgba(45,139,232,0.45);
+  outline-offset: 2px;
+}
+.btn-hero:hover { transform: translateY(-1px); box-shadow: 0 4px 10px rgba(45,139,232,0.2); }
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-secondary {
+  background: #fff;
+  color: var(--accent);
+  border-color: rgba(255,255,255,0.65);
+}
+.hero-illustration {
+  margin-top: 24px;
+  height: 220px;
+}
+.hero-illustration img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Services */
+.services {
+  background: #fff;
+  padding: 64px 0 72px;
+}
+.services h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 32px;
+  color: var(--text-primary);
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.service-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px var(--card-shadow);
+  text-align: center;
+}
+.service-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  display: grid;
+  place-items: center;
+}
+.service-card:nth-child(1) .service-icon { background: var(--icon-circle-1); }
+.service-card:nth-child(2) .service-icon { background: var(--icon-circle-2); }
+.service-card:nth-child(3) .service-icon { background: var(--icon-circle-3); }
+.service-card:nth-child(4) .service-icon { background: var(--icon-circle-4); }
+
+.service-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+.service-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 1199px) {
+  .container { max-width: 960px; }
+}
+@media (max-width: 991px) {
+  .service-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .hero h1 { font-size: 44px; }
+}
+@media (max-width: 599px) {
+  .service-grid { grid-template-columns: 1fr; gap: 16px; }
+  .hero { padding: 48px 0 32px; }
+  .hero h1 { font-size: 34px; }
+  .cta-group { flex-direction: column; gap: 12px; width: 100%; max-width: 300px; margin: 0 auto; }
+  .nav { display: none; }
+}
+
+/* Utility for spacing page sections from sticky header anchor targets */
+section { scroll-margin-top: 72px; }

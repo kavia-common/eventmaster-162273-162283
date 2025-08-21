@@ -10,6 +10,28 @@
   --color-border: #E5E7EB;
   --color-text: #111827;
   --radius: 12px;
+
+  /* Marketing landing theme variables from design notes */
+  --bg-canvas: #FFFFFF;
+  --bg-hero: #4A9EE6;
+  --bg-hero-light: #62B0F0;
+  --text-primary: #1E2A35;
+  --text-secondary: #6C7A89;
+  --text-on-hero: #FFFFFF;
+  --brand: #2D8BE8;
+  --accent: #1F7AD1;
+  --cta-primary-bg: #FFFFFF;
+  --cta-primary-text: #2D8BE8;
+  --cta-secondary-bg: #2D8BE8;
+  --cta-secondary-text: #FFFFFF;
+  --nav-link: #4A9EE6;
+  --nav-link-hover: #1F7AD1;
+  --icon-circle-1: #FAD46B;
+  --icon-circle-2: #66C2D1;
+  --icon-circle-3: #7EC6FF;
+  --icon-circle-4: #F46B6B;
+  --divider: #E8EEF4;
+  --card-shadow: rgba(16, 42, 67, 0.06);
 }
 
 * {

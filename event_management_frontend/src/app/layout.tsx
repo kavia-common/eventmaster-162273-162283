@@ -14,19 +14,26 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Keep layout minimal and let the landing page control its own marketing header.
+  const isMarketing = true;
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
         <AuthProvider>
-          <div className="min-h-screen bg-[var(--color-surface)] text-[var(--color-text)]">
-            <div className="flex min-h-screen">
-              <Sidebar />
-              <main className="flex-1 flex flex-col">
-                <Header />
-                <div className="p-4">{children}</div>
-              </main>
+          {isMarketing ? (
+            <>{children}</>
+          ) : (
+            <div className="min-h-screen bg-[var(--color-surface)] text-[var(--color-text)]">
+              <div className="flex min-h-screen">
+                <Sidebar />
+                <main className="flex-1 flex flex-col">
+                  <Header />
+                  <div className="p-4">{children}</div>
+                </main>
+              </div>
             </div>
-          </div>
+          )}
         </AuthProvider>
       </body>
     </html>
