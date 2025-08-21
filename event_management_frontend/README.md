@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Event Management Frontend (Next.js)
 
-## Getting Started
+Modern light-themed frontend for the Event Management application. Implements:
+- Authentication (login/register)
+- Dashboard layout with sidebar/header
+- Events list with search
+- Event detail modal
+- RSVP capability
+- Attendee list
+- Responsive calendar view
+- My RSVPs page
 
-First, run the development server:
+## Prerequisites
+- Node.js 18+ recommended
+- Backend API running and reachable
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Configuration
+1. Copy `.env.example` to `.env.local`
+2. Set:
+   - `NEXT_PUBLIC_API_BASE_URL` to your backend origin (e.g. http://localhost:4000)
+   - Optionally `NEXT_PUBLIC_APP_TITLE`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Scripts
+- `npm run dev` - start development server (http://localhost:3000)
+- `npm run build` - build for production
+- `npm start` - start production server
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Integration
+This app talks to the Express backend with the following endpoints:
+- POST `/auth/register`, POST `/auth/login`, GET `/auth/me`
+- GET `/events`, POST `/events`, GET/PUT/DELETE `/events/:id`
+- GET `/events/:id/attendees`
+- POST `/events/:id/rsvp`
+- GET `/rsvps/me`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+JWT is stored in `localStorage` as `auth_token` after login.
 
-## Learn More
+## Notes
+- UI uses Tailwind v4 via @tailwindcss/postcss configuration already present.
+- All pages are client components for simplicity with API calls on the client.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
